@@ -1,12 +1,15 @@
 {
   "name": "react-slick",
-  "version": "0.23.2",
+  "version": "0.23.2-copilot",
   "description": " React port of slick carousel",
   "main": "./lib",
   "files": [
     "dist",
     "lib"
   ],
+  "publishConfig": {
+    "registry": "https://copilot.jfrog.io/copilot/api/npm/copilot-node"
+  },
   "scripts": {
     "start": "gulp server",
     "build": "gulp clean && gulp sass && gulp copy && webpack",
