@@ -301,7 +301,7 @@ export class InnerSlider extends React.Component {
       loadedCount = 0;
     Array.prototype.forEach.call(images, image => {
       const handler = () =>
-        ++loadedCount && loadedCount >= imagesCount && this.onWindowResized();
+        ++loadedCount && loadedCount >= imagesCount;
       if (!image.onclick) {
         image.onclick = () => image.parentNode.focus();
       } else {
@@ -315,9 +315,6 @@ export class InnerSlider extends React.Component {
         if (this.props.lazyLoad) {
           image.onload = () => {
             this.adaptHeight();
-            this.callbackTimers.push(
-              setTimeout(this.onWindowResized, this.props.speed)
-            );
           };
         } else {
           image.onload = handler;
